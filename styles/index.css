@@ -1,0 +1,16 @@
+.jumbotron {
+    background-image: url("../assets/images/index-background.jpg");
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 35%;
+}
+
+body {
+    font-family: 'Rufina', serif;
+}
