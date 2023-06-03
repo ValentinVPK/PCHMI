@@ -1,4 +1,8 @@
 
+html, body {
+  height: auto;
+}
+
 /* Set background color of registration form */
 body {
   font-family: 'Rufina', serif;
@@ -6,6 +10,12 @@ body {
   background-size: cover;
   color: white;
   background-repeat: no-repeat;
+}
+
+i {
+  color: white;
+  font-size: 40px;
+  margin-left: 30px;
 }
 
 /* Style submit button */
@@ -24,4 +34,29 @@ body {
 
 .btn-secondary {
   width: 35%;
+}
+
+.form-container {
+  width: 50%;
+}
+
+.login-btn {
+  width: 80%;
+}
+
+.forgot-password a{
+  font-size: 16px;
+  color: #C8C8C8;
+  text-decoration: underline;
+}
+
+.sign-up {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.sign-up a {
+  color: #C8C8C8;
+  text-decoration: underline;
+  margin-left: 15px;
 }
