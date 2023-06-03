@@ -1,3 +1,7 @@
+
+html,body {
+    height: auto;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #D3D3D3;
@@ -47,17 +51,29 @@ h1 {
     bottom: 0;
     width: 100%;
     background-color: #f5f5f5;
-    height: 60px;
-    padding: 20px;
+    height: 70px;
     text-align: center;
     display: flex;
     justify-content: center;
     border-top: 1px solid grey;
+    align-items: center;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a p, .footer a i {
+    color: black;
 }
 
 .footer-item {
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
 }
 
 .footer-item:hover {
@@ -68,4 +84,12 @@ h1 {
 .footer-item:hover p {
     background-color: #343a40;
     color: white;
+}
+
+.footer-item:hover i {
+    color: white;
+}
+
+.footer-item p {
+    margin-bottom: 0;
 }
