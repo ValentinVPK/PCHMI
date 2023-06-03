@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/connect-trainer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var trainerCards = document.getElementsByClassName('trainer-card');
+            var modal = document.getElementById('modal');
+            var modalContent = document.getElementById('modal-content');
+
+            // Open modal and display trainer information
+            function openModal(trainerName, trainerContact, trainerDescription, trainerAvatar) {
+                modalContent.innerHTML = `
+                    <img src="${trainerAvatar}" alt="${trainerName}" class="trainer-modal-avatar">
+                    <h2>${trainerName}</h2>
+                    <p class="trainer-modal-contact">${trainerContact}</p>
+                    <p class="trainer-modal-description">${trainerDescription}</p>
+                    <span id="close-btn" class="modal-close">&times;</span>
+                `;
+                modal.style.display = 'flex';
+
+                var closeBtn = document.getElementById('close-btn');
+                closeBtn.addEventListener('click', function () {
+                    closeModal();
+                });
+            }
+
+            // Close modal
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            // Add click event listeners to trainer cards
+            for (var i = 0; i < trainerCards.length; i++) {
+                trainerCards[i].addEventListener('click', function () {
+                    var name = this.getElementsByClassName('trainer-name')[0].innerText;
+                    var contact = this.getAttribute('data-contact');
+                    var description = this.getAttribute('data-description');
+                    var avatar = this.getAttribute('data-avatar');
+                    openModal(name, contact, description, avatar);
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a href="./home-page.html">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <img src="../assets/images/fittrac-low-resolution-logo-white-on-transparent-background.png"
+                    alt="Fitness App Logo" class="navbar-brand ml-auto mr-auto mt-2 mb-2 logo-img">
+            </div>
+        </nav>
+    </a>
+    <h1>Trainers</h1>
+
+    <div class="trainer-card" data-contact="123456789" data-description="Certified Personal Trainer" data-avatar="../assets/images/trainers/trainer2.jpg">
+        <img src="../assets/images/trainers/trainer2.jpg" alt="Trainer 1" class="trainer-avatar">
+        <div class="trainer-details">
+            <div class="trainer-name">John Doe</div>
+            <div class="trainer-specialty">Weightlifting</div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Show information</button>
+    </div>
+
+    <div class="trainer-card" data-contact="987654321" data-description="Experienced Yoga Instructor" data-avatar="../assets/images/trainers/trainer1.jpg">
+        <img src="../assets/images/trainers/trainer1.jpg" alt="Trainer 2" class="trainer-avatar">
+        <div class="trainer-details">
+            <div class="trainer-name">Jane Smith</div>
+            <div class="trainer-specialty">Yoga</div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Show information</button>
+    </div>
+
+    <div class="trainer-card" data-contact="555555555" data-description="Certified Cardio Coach" data-avatar="../assets/images/trainers/trainer1.png">
+        <img src="../assets/images/trainers/trainer1.png" alt="Trainer 3" class="trainer-avatar">
+        <div class="trainer-details">
+            <div class="trainer-name">Mike Johnson</div>
+            <div class="trainer-specialty">Cardio</div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Show information</button>
+    </div>
+
+    <div class="trainer-card" data-contact="555555555" data-description="Certified Cardio Coach" data-avatar="../assets/images/trainers/trainer3.jpg">
+        <img src="../assets/images/trainers/trainer3.jpg" alt="Trainer 3" class="trainer-avatar">
+        <div class="trainer-details">
+            <div class="trainer-name">Ivan Ivanov</div>
+            <div class="trainer-specialty">Crossfit</div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Show information</button>
+
+    </div>
+    <div class="trainer-card" data-contact="555555555" data-description="Certified Cardio Coach" data-avatar="../assets/images/trainers/trainer4.jpg">
+        <img src="../assets/images/trainers/trainer4.jpg" alt="Trainer 3" class="trainer-avatar">
+        <div class="trainer-details">
+            <div class="trainer-name">Petar Petrov</div>
+            <div class="trainer-specialty">Cardio</div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Show information</button>
+
+    </div>
+    <div class="trainer-card" data-contact="555555555" data-description="Certified Cardio Coach" data-avatar="../assets/images/trainers/trainer5.jpg">
+        <img src="../assets/images/trainers/trainer5.jpg" alt="Trainer 3" class="trainer-avatar">
+        <div class="trainer-details">
+            <div class="trainer-name">Maria Petrova</div>
+            <div class="trainer-specialty">Aestetics</div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Show information</button>
+    </div>
+
+    <!-- Add more trainer cards as needed -->
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div id="modal-content" class="modal-content"></div>
+    </div>
+    <div class="footer">
+        <div class="footer-item">
+            <i class="fa-regular fa-house"></i>
+            <p>Home</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-dumbbell"></i>
+            <p>Exercises</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-pot-food"></i>
+            <p>Recipes</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-screen-users"></i>
+            <p>Trainers</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-bars-progress"></i>
+            <p>Progress</p>
+        </div>
+    </div>
+
+
+</body>
+<script src="https://kit.fontawesome.com/56c73ba1ac.js" crossorigin="anonymous"></script>
+
+</html>

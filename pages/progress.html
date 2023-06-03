@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="../styles/progress.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rufina&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <a href="./home-page.html">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <img src="../assets/images/fittrac-low-resolution-logo-white-on-transparent-background.png"
+                    alt="Fitness App Logo" class="navbar-brand ml-auto mr-auto mt-2 mb-2 logo-img">
+            </div>
+        </nav>
+    </a>
+    <div class="container">
+        <h1 class="mt-4">Progress Tracker</h1>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="goal-card">
+                    <div class="card-header">Weight Loss</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Weekly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="weightLossWeeklyChart"></canvas>
+                        </div>
+                        <h5 class="card-title">Monthly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="weightLossMonthlyChart"></canvas>
+                        </div>
+                        <h5 class="card-title">Yearly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="weightLossYearlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="goal-card">
+                    <div class="card-header">Feeding</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Weekly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="feedingWeeklyChart"></canvas>
+                        </div>
+                        <h5 class="card-title">Monthly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="feedingMonthlyChart"></canvas>
+                        </div>
+                        <h5 class="card-title">Yearly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="feedingYearlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="goal-card">
+                    <div class="card-header">Exercise Routine</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Weekly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="exerciseRoutineWeeklyChart"></canvas>
+                        </div>
+                        <h5 class="card-title">Monthly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="exerciseRoutineMonthlyChart"></canvas>
+                        </div>
+                        <h5 class="card-title">Yearly Progress</h5>
+                        <div class="progress-chart-container">
+                            <canvas id="exerciseRoutineYearlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more goal cards for additional goals -->
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="goal-card">
+                    <div class="card-header">Overall Progress</div>
+                    <div class="card-body">
+                        <div class="overall-progress-chart-container">
+                            <canvas id="overallProgressChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mb-5 pb-5">
+                <a href="./physical-parameters.html"> <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right w-100">Change Physical Parameters</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="footer mt-5">
+        <div class="footer-item">
+            <i class="fa-regular fa-house"></i>
+            <p>Home</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-dumbbell"></i>
+            <p>Exercises</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-pot-food"></i>
+            <p>Recipes</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-screen-users"></i>
+            <p>Trainers</p>
+        </div>
+        <div class="footer-item ml-4">
+            <i class="fa-regular fa-bars-progress"></i>
+            <p>Progress</p>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for the charts
+        var weightLossWeeklyData = [10, 20, 15, 25, 18, 22, 30];
+        var weightLossMonthlyData = [200, 350, 400, 300, 500, 450, 600];
+        var weightLossYearlyData = [1000, 1500, 1200, 1800, 2000, 2500, 2200, 2800, 3000, 3500, 3200, 3800];
+
+        var feedingWeeklyData = [5, 10, 8, 12, 9, 7, 11];
+        var feedingMonthlyData = [150, 200, 180, 220, 190, 170, 210];
+        var feedingYearlyData = [800, 1000, 900, 1100, 950, 850, 1050, 1250, 1200, 1400, 1300, 1500];
+
+        var exerciseRoutineWeeklyData = [3, 4, 4, 5, 4, 3, 5];
+        var exerciseRoutineMonthlyData = [15, 18, 17, 20, 19, 16, 21];
+        var exerciseRoutineYearlyData = [80, 90, 85, 100, 95, 85, 105, 120, 110, 130, 125, 140];
+
+        // Chart configuration
+        var chartConfig = {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7'],
+                datasets: [{
+                    label: 'Progress',
+                    data: [],
+                    borderColor: '#77bbdd',
+                    backgroundColor: 'rgba(119, 187, 221, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+
+        // Create the charts
+        var weightLossWeeklyChart = createChart('weightLossWeeklyChart', weightLossWeeklyData);
+        var weightLossMonthlyChart = createChart('weightLossMonthlyChart', weightLossMonthlyData);
+        var weightLossYearlyChart = createChart('weightLossYearlyChart', weightLossYearlyData);
+
+        var feedingWeeklyChart = createChart('feedingWeeklyChart', feedingWeeklyData);
+        var feedingMonthlyChart = createChart('feedingMonthlyChart', feedingMonthlyData);
+        var feedingYearlyChart = createChart('feedingYearlyChart', feedingYearlyData);
+
+        var exerciseRoutineWeeklyChart = createChart('exerciseRoutineWeeklyChart', exerciseRoutineWeeklyData);
+        var exerciseRoutineMonthlyChart = createChart('exerciseRoutineMonthlyChart', exerciseRoutineMonthlyData);
+        var exerciseRoutineYearlyChart = createChart('exerciseRoutineYearlyChart', exerciseRoutineYearlyData);
+
+        // Function to create a chart with the provided ID and data
+        function createChart(chartId, data) {
+            var ctx = document.getElementById(chartId).getContext('2d');
+            chartConfig.data.datasets[0].data = data;
+            return new Chart(ctx, chartConfig);
+        }
+
+        // Overall progress chart
+        var overallProgressChart = new Chart(document.getElementById('overallProgressChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Weight Loss', 'Feeding', 'Exercise Routine'],
+                datasets: [{
+                    label: 'Weekly Progress',
+                    data: [weightLossWeeklyData[weightLossWeeklyData.length - 1], feedingWeeklyData[feedingWeeklyData.length - 1], exerciseRoutineWeeklyData[exerciseRoutineWeeklyData.length - 1]],
+                    backgroundColor: '#77bbdd',
+                    borderColor: '#77bbdd',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Add Bootstrap JS scripts if needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/56c73ba1ac.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

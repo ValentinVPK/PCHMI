@@ -56,6 +56,8 @@ body {
     padding: 20px;
 }
 .card {
+    text-decoration: none;
+    color: inherit;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -63,6 +65,14 @@ body {
     overflow: hidden;
     width: 300px;
     position: relative;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
 }
 .card img {
     width: 100%;
@@ -85,7 +95,7 @@ body {
 .card::after {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    content: "New Recipe";
+    content: "Top Recipe";
     font-size: 1.2em;
     font-weight: bold;
     padding: 10px;
