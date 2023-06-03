@@ -1,9 +1,10 @@
 .jumbotron {
+    //background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/index-background.jpg");
     background-image: url("../assets/images/index-background.jpg");
     background-size: cover;
     height: 500px;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 }
 
@@ -13,4 +14,40 @@
 
 body {
     font-family: 'Rufina', serif;
+}
+
+.buttons-background {
+    position: relative;
+    height: 40%;
+    width: 100%;
+}
+
+.buttons-background::before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+    background: rgb(105,105,105);
+    background: linear-gradient(0deg, rgba(105,105,105,1) 13%, rgba(128,128,128,1) 34%, rgba(144,144,144,1) 41%, rgba(224,224,224,1) 100%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    border-top-left-radius: 29px;
+    border-top-right-radius: 29px;
+}
+
+.title {
+    color: #001E62;
+    font-size: 30px;
+}
+
+.buttons-container {
+    z-index: 2;
+    position: relative;
+}
+
+.btn {
+    color: #001E62;
+    width: 100%;
 }
