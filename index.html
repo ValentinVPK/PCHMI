@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Fitness App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Rufina&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <img src="./assets/images/fittrac-low-resolution-logo-white-on-transparent-background.png" alt="Fitness App Logo" class="navbar-brand ml-auto mr-auto mt-2 mb-2 logo-img">
+  <nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/fittrac-low-resolution-logo-white-on-transparent-background.png"
+          alt="Fitness App Logo" class="navbar-brand ms-auto me-auto mt-2 mb-2 logo-img d-block">
+      </a>
     </div>
   </nav>
+
   <div class="jumbotron jumbotron-fluid">
-    <div class="container mt-auto">
+    <div class="buttons-background">
+      <div class="container mt-auto buttons-container">
         <div class="row">
-            <div class="col-10 mx-auto mx-sm-0 mb-3 mb-sm-0 col-sm-6">
-                <a href="#" class="btn btn-light btn-lg btn-block">Login</a>
-            </div>
-            <div class="col-10 mx-auto mx-sm-0 col-sm-6">
-                <a href="./pages/registration.html" class="btn btn-info btn-lg btn-block">Register</a>
-            </div>      
+          <div class="text-center">
+            <h3 class="title mt-4">Welcome to FitTrac!</h3>
+          </div>
         </div>
+        <div class="row mt-4 mt-sm-5 justify-content-center">
+          <div class="col-5 col-sm-4 col-md-3">
+            <a href="./pages/login.html" class="btn btn-light btn-lg btn-block me-3">Login</a>
+          </div>
+          <div class="col-5 col-sm-4 col-md-3">
+            <a href="./pages/registration.html" class="btn btn-info btn-lg btn-block ms-3">Register</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
