@@ -14,42 +14,104 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <img src="../assets/images/fittrac-low-resolution-logo-white-on-transparent-background.png" alt="Fitness App Logo" class="navbar-brand ml-auto mr-auto mt-2 mb-2 logo-img">
+        <div class="container-fluid">
+          <a href="/index.html"><i class="fa-regular fa-chevron-left"></i></a>
+          <img src="../assets/images/fittrac-low-resolution-logo-white-on-transparent-background.png" alt="Fitness App Logo" class="navbar-brand ms-auto me-auto mt-2 mb-2 logo-img">
         </div>
     </nav>
     <!-- Registration form -->
     <div class="container form-container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3 mt-5">
-          <h2 class="mb-5">Registration Form</h2>
-          <form>
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
+      <div class="row justify-content-center">
+        <div>
+          <h2 class="mt-5 mb-4">Sign Up</h2>
+          <form class="needs-validation home-form" novalidate >
+            <div class="mb-4">
+              <label for="validationCustomEmail" class="form-label">Email</label>
+              <div class="input-group has-validation">
+                <input type="email" class="form-control" id="validationCustomEmail" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+            </div> 
+            <div class="mb-4">
+              <label for="validationCustomPassword" class="form-label">Password</label>
+              <div class="input-group has-validation">
+                <input type="password" class="form-control" id="validationCustomPassword" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please enter a valid password
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+            </div> 
+            <div class="mb-4">
+              <label for="validationCustom01" class="form-label">First name</label>
+              <input type="text" class="form-control" id="validationCustom01" required>
+              <div class="invalid-feedback">
+                Please enter a first name
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
+            <div class="mb-4">
+              <label for="validationCustom02" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="validationCustom02" required>
+              <div class="invalid-feedback">
+                Please enter a last name
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
             </div>
-            <div class="form-group">
-              <label for="first-name">First Name</label>
-              <input type="text" class="form-control" id="first-name" placeholder="Enter first name">
+            <div class="mb-4">
+              <label for="validationCustomPhone" class="form-label">Phone number</label>
+              <input type="text" class="form-control" id="validationCustomPhone" required>
+              <div class="invalid-feedback">
+                Please enter a valid phone number
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
             </div>
-            <div class="form-group">
-              <label for="last-name">Last Name</label>
-              <input type="text" class="form-control" id="last-name" placeholder="Enter last name">
-            </div>
-            <div class="form-group">
-              <label for="gender">Gender</label>
-              <select class="form-control" id="gender">
+            <div class="mb-4">
+              <label for="validationCustom04" class="form-label">Gender</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Other</option>
               </select>
+              <div class="invalid-feedback">
+                Please choose a gender
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
             </div>
-            <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Register</button>
+            <div class="mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary mb-5 mt-3 ms-auto me-auto d-block login-btn" type="submit">Sign Up</button>
+            </div>
           </form>
+          <div class="d-flex justify-content-center">
+            <span class="sign-up">Already have an account? <a href="./login.html">Log in!</a></span>
+          </div>
         </div>
       </div>
     </div>
@@ -61,5 +123,6 @@
     crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/56c73ba1ac.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/56c73ba1ac.js" crossorigin="anonymous"></script>
+    <script src="/javascript/registration.js" crossorigin="anonymous"></script>
   </body>
 </html>
