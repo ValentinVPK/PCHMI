@@ -32,7 +32,8 @@
           </div>
           <div class="form-group">
             <label for="number">Weight</label>
-            <input type="number" minlength="2" maxlength="3" class="form-control" id="password" placeholder="Enter weight">
+            <input type="number" minlength="2" maxlength="3" class="form-control" id="password"
+              placeholder="Enter weight">
           </div>
           <div class="form-group">
             <label for="first-name">Age</label>
@@ -54,6 +55,15 @@
               <option value="every day">Cardio</option>
               <option value="every day">Yoga</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Upload your photo:</label>
+            <input type="file" id="img" name="img" accept="image/*">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Add short description about yourself</label>
+            <textarea id="freeform" class="form-control" name="freeform" rows="4" cols="50">
+              </textarea>
           </div>
           <button type="submit" class="btn btn-secondary mb-5 mt-3 float-right">Submit</button>
         </form>
