@@ -82,6 +82,15 @@ h5 {
     align-items: center;
 }
 
+.footer a {
+    text-decoration: none;
+}
+
+.footer a p,
+.footer a i {
+    color: black;
+}
+
 .footer-item {
     display: flex;
     flex-direction: column;
@@ -98,6 +107,10 @@ h5 {
 
 .footer-item:hover p {
     background-color: #343a40;
+    color: white;
+}
+
+.footer-item:hover i {
     color: white;
 }
 
